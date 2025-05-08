@@ -1,5 +1,12 @@
 spring:
   application.name: thumb-backend
+  data:
+    # Redis 配置
+    redis:
+      database: 0
+      host: localhost
+      timeout: 5000
+      port: 6380
   mvc:
     servlet:
       path: /api
