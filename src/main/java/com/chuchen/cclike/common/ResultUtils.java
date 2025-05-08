@@ -3,7 +3,7 @@ package com.chuchen.cclike.common;
 /**
  * 返回工具类
  *
- * @author pine
+ * @author chuchen
  */
 public class ResultUtils {
 
