@@ -22,8 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 定时将 Redis 中的临时点赞数据同步到数据库  
- *  
+ * @author chuchen
+ * 定时将 Redis 中的临时点赞数据同步到数据库
  */  
 @Component
 @Slf4j
@@ -66,7 +66,7 @@ public class SyncThumb2DBJob {
         Map<Long, Long> blogThumbCountMap = new HashMap<>();
         if (thumbMapEmpty) {  
             return;  
-        }  
+        }
         ArrayList<Thumb> thumbList = new ArrayList<>();
         LambdaQueryWrapper<Thumb> wrapper = new LambdaQueryWrapper<>();
         boolean needRemove = false;  
