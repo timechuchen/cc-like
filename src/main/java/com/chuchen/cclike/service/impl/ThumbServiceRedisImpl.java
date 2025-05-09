@@ -106,7 +106,7 @@ public class ThumbServiceRedisImpl extends ServiceImpl<ThumbMapper, Thumb> imple
 
     @Override
     public Boolean hasThumb(Long blogId, Long userId) {
-        return redisTemplate.opsForHash().hasKey(ThumbConstant.USER_THUMB_KEY_PREFIX + userId, blogId.toString());
+        return redisTemplate.opsForHash().hasKey(RedisKeyUtil.getUserThumbKey(userId), blogId.toString());
     }
 }
 
