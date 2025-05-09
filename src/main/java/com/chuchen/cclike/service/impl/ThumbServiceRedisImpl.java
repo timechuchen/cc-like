@@ -17,6 +17,7 @@ import com.chuchen.cclike.service.UserService;
 import com.chuchen.cclike.util.RedisKeyUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -30,12 +31,12 @@ import java.util.Objects;
 * @description 针对表【thumb】的数据库操作Service实现
 * @createDate 2025-05-08 15:38:26
 */
-@Service("thumbService")
-@AllArgsConstructor
+@Service("thumbServiceRedis")
+@RequiredArgsConstructor
 @Slf4j
 public class ThumbServiceRedisImpl extends ServiceImpl<ThumbMapper, Thumb> implements ThumbService{
 
-    private UserService userService;
+    private final UserService userService;
 
     private final RedisTemplate<String, Object> redisTemplate;
 
